@@ -1,2 +1,2 @@
 # Cpp
-C++ Library
+This is a library for C++
