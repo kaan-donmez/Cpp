@@ -1,7 +1,7 @@
 #include "PairFunctions.hpp"
 
 template <typename T>
-void print(pair<T, T> &pairList)
+void print(pair<T, T> &pairList)const
 {
     cout << pairList.first << " " << pairList.second << endl;
 }
@@ -9,7 +9,7 @@ void print(pair<T, T> &pairList)
 template <typename T>
 void PrintPairVector(vector<pair<T, T>> &vectorList)
 {
-    for (auto element : vectorList)
+    for (const auto &element : vectorList)
     {
         cout << element.first << " " << element.second << endl;
     }
