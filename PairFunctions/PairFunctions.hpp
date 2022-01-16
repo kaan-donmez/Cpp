@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void PrintPair(pair<int, int> &obj);
+void PrintPair(pair<int, int> &pairList);
 void PrintPairVector(vector<pair<int, int>> &vectorList);
 
 #endif // __PAIR_FUNCTIONS__
