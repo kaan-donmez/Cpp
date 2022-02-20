@@ -1,5 +1,5 @@
-#ifndef __VECTOR_HANDLE_H_
-#define __VECTOR_HANDLE_H_
+#ifndef __VECTOR_HANDLER_H_
+#define __VECTOR_HANDLER_H_
 
 #include <algorithm>
 #include <iostream>
@@ -35,4 +35,4 @@ void PrintVector(std::vector<T> &vec);
 template <typename T>
 void SortVector(std::vector<T> &vec, bool reverse = true);
 
-#endif /* VECTOR_HANDLE_H_ */
+#endif /* VECTOR_HANDLER_H_ */
