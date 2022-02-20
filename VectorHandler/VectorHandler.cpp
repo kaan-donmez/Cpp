@@ -1,4 +1,4 @@
-#include "VectorHandle.h"
+#include "VectorHandler.h"
 
 template <typename T>
 std::vector<T> GenerateVector(std::vector<T> &vec)
@@ -17,7 +17,7 @@ std::vector<T> GenerateVector(std::vector<T> &vec)
 template <typename T>
 void PrintVector(std::vector<T> &vec)
 {
-    for (auto &value : vec)
+    for (const auto &value : vec)
     {
         std::cout << value << " ";
     }
