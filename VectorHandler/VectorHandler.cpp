@@ -1,26 +1,29 @@
 #include "VectorHandler.h"
 
-template <typename T>
-std::vector<T> GenerateVector(std::vector<T> &vec)
+std::vector<int> GenerateIntegerVector(int vectorSize, int min, int max)
 {
-    std::vector<T> tempVec;
-    srand(time(0));
-    generate(vec.begin(), vec.end(), []()
-             { return (rand() % 100); });
-    for (auto &temp : vec)
-    {
-        tempVec.push_back(temp);
-    }
+    std::vector<int> tempVec(vectorSize);
+    std::random_device dev;
+    std::default_random_engine rng(dev());
+    std::uniform_int_distribution<> dist(min, max);
+
+    auto gen = [&dist, &rng]()
+    { return dist(rng); };
+    generate(tempVec.begin(), tempVec.end(), gen);
     return tempVec;
 }
 
-template <typename T>
-void PrintVector(std::vector<T> &vec)
+std::vector<float> GenerateFloatVector(int vectorSize, int min, int max)
 {
-    for (const auto &value : vec)
-    {
-        std::cout << value << " ";
-    }
+    std::vector<float> tempVec(vectorSize);
+    std::random_device dev;
+    std::default_random_engine rng(dev());
+    std::uniform_real_distribution<> dist(min, max);
+
+    auto gen = [&dist, &rng]()
+    { return dist(rng); };
+    generate(tempVec.begin(), tempVec.end(), gen);
+    return tempVec;
 }
 
 template <typename T>
@@ -53,30 +56,4 @@ void SortVector(std::vector<T> &vec, bool reverse = true)
     {
         sort(vec.begin(), vec.end(), greater<T>());
     }
-}
-
-std::vector<int> GenerateIntegerVector(int vectorSize, int min, int max)
-{
-    std::vector<int> tempVec(vectorSize);
-    std::random_device dev;
-    std::default_random_engine rng(dev());
-    std::uniform_int_distribution<> dist(min, max);
-
-    auto gen = [&dist, &rng]()
-    { return dist(rng); };
-    generate(tempVec.begin(), tempVec.end(), gen);
-    return tempVec;
-}
-
-std::vector<float> GenerateFloatVector(int vectorSize, int min, int max)
-{
-    std::vector<float> tempVec(vectorSize);
-    std::random_device dev;
-    std::default_random_engine rng(dev());
-    std::uniform_real_distribution<> dist(min, max);
-
-    auto gen = [&dist, &rng]()
-    { return dist(rng); };
-    generate(tempVec.begin(), tempVec.end(), gen);
-    return tempVec;
 }
