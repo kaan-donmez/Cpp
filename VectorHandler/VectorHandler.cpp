@@ -24,6 +24,25 @@ void PrintVector(std::vector<T> &vec)
 }
 
 template <typename T>
+void Print2DVector(std::vector<T> vec)
+{
+    for (auto vect1D : vec)
+    {
+        for (auto x : vect1D)
+        {
+            std::cout << x << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+template <typename T, typename K>
+K CountElementInVector(std::vector<T> &vec, K value)
+{
+    return count(vec.begin(), vec.end(), value);
+}
+
+template <typename T>
 void SortVector(std::vector<T> &vec, bool reverse = true)
 {
     if (reverse == true)

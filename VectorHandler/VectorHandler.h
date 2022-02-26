@@ -26,6 +26,27 @@ template <typename T>
 void PrintVector(std::vector<T> &vec);
 
 /**
+ * @brief This function is used to print 2D vector.
+ *
+ * @tparam T
+ * @param vec
+ */
+template <typename T>
+void Print2DVector(std::vector<T> vec);
+
+/**
+ * @brief This function is used to count element in vector.
+ *
+ * @tparam T
+ * @tparam K
+ * @param vec
+ * @param value
+ * @return K is elemnet count of vector.
+ */
+template <typename T, typename K>
+K CountElementInVector(std::vector<T> &vec, K value);
+
+/**
  * @brief Sort vector increased or decreased.
  *
  * @tparam T vector type.
@@ -35,4 +56,4 @@ void PrintVector(std::vector<T> &vec);
 template <typename T>
 void SortVector(std::vector<T> &vec, bool reverse = true);
 
-#endif /* VECTOR_HANDLER_H_ */
+#endif /* __VECTOR_HANDLER_H_ */
