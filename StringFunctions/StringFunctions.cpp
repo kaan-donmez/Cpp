@@ -15,3 +15,10 @@ float ConvertStringtoFloat(string value)
     ss >> floatValue;
     return floatValue;
 }
+
+template <typename T>
+string ConvertToString(T value)
+{
+    string temp = to_string(value);
+    return temp;
+}

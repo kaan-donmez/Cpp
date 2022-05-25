@@ -43,6 +43,9 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp",
+        "sstream": "cpp"
     }
 }
