@@ -4,8 +4,16 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+#include <algorithm>
 
-using namespace std;
+enum class TrimType
+{
+    Left,
+    Right,
+    Both
+};
+
+const std::string WHITESPACE = " \t\n\r";
 
 /**
  * @brief This function is used to convert string variable to integer variable.
@@ -13,7 +21,7 @@ using namespace std;
  * @param value
  * @return int
  */
-int ConvertStringtoInt(string value);
+int ConvertStringtoInt(std::string value);
 
 /**
  * @brief This function is used to convert string variable to float variable.
@@ -21,16 +29,25 @@ int ConvertStringtoInt(string value);
  * @param value
  * @return float
  */
-float ConvertStringtoFloat(string value);
+float ConvertStringtoFloat(std::string value);
 
 /**
  * @brief This function is used to convert any variable to string variable.
  *
- * @tparam T
+ * @param T
  * @param value
- * @return string
+ * @return std::string
  */
 template <typename T>
-string ConvertToString(T value);
+std::string ConvertToString(T value);
+
+/**
+ * @brief This function is used to trim strings depending on your choice.
+ *
+ * @param str
+ * @param trimType
+ * @return std::string
+ */
+std::string TrimText(const std::string &str, TrimType trimType);
 
 #endif /* __STRING_FUNTIONS_H_ */
